@@ -10,11 +10,10 @@ int main()
     int screenHeight = 450;
     InitWindow(screenWidth, screenHeight, "Top-Down Game");
 
-    // Initialize Background
-    Texture2D bgImage = LoadTexture("Grey-Granada-Tile-Cement-8x8-large.png");
+    
 
     // Initialize Player
-    Texture2D playerImage = LoadTexture("images/player.png");
+    Texture2D playerImage = LoadTexture("images/png/front view 3x.png");
     float playerX = 500;
     float playerY = 100;
     Vector2 player = {playerX, playerY};
@@ -28,8 +27,7 @@ int main()
         BeginDrawing();
 
         // Draw Background
-        DrawTexture(bgImage, 0, 0, WHITE);
-
+        ClearBackground(DARKGREEN);
         // Draw the Player
         DrawTexture(playerImage, player.x, player.y, WHITE);
 
