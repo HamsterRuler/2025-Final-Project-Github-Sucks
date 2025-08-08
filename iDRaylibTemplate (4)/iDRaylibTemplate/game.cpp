@@ -12,6 +12,8 @@ int main()
 
      Texture2D bgImage = LoadTexture("Grey-Granada-Tile-Cement-8x8-large.png");
 
+     
+
     // Initialize Player
     Texture2D playerImage = LoadTexture("images/png/front view 3x.png");
     float playerX = 500;
@@ -26,6 +28,11 @@ int main()
         right
     }Direction;
     Direction playerDir = down;
+    // ================================================================================================================
+    Texture2D playerRight = LoadTexture("images/png/side view right 3x.png");
+    Texture2D playerLeft = LoadTexture("images/png/side view left 3x.png");
+    Texture2D playerUp = LoadTexture("images/png/side view back 3x.png");
+    Texture2D playerDown = LoadTexture("images/png/front view 3x.png");
     // Set the target FPS
     SetTargetFPS(60);
     // ================================================================================================================
@@ -58,6 +65,24 @@ int main()
             player.y += speed;
             playerDir = down;
         }
+        //-------------------------------------------------
+         // Boundaries for the Player Movement
+        if ((player.x + 64) >= screenWidth) // Right
+        {
+            player.x = (screenWidth - 64);
+        }
+        if (player.x <= -20) // Left
+        {
+            player.x = -20;
+        }
+        if (player.y <= 0) // Up
+        {
+            player.y = 0;
+        }
+        if ((player.y + 64) >= screenHeight) // Down
+        {
+            player.y = (screenHeight - 64);
+        }
 
         //-------------------------------------------------
         
@@ -65,6 +90,24 @@ int main()
         ClearBackground(DARKBLUE);
         // Draw the Player
         DrawTexture(playerImage, player.x, player.y, WHITE);
+
+        switch (playerDir)
+        {
+            case right:
+                DrawTexture(playerRight, player.x, player.y, WHITE);
+            break;
+            case left:
+                DrawTexture(playerLeft, player.x, player.y, WHITE);
+            break;
+            case up:
+                DrawTexture(playerUp, player.x, player.y, WHITE);
+            break;
+            case down:
+                DrawTexture(playerDown, player.x, player.y, WHITE);
+            break;
+            default:
+            break;
+        }
 
         EndDrawing();
         //-------------------------------------------------
