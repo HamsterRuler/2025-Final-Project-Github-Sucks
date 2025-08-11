@@ -4,7 +4,7 @@
 class Item
 {
     public:
-    Texture2D image = LoadTexture("images/coin.png");
+    Texture2D image = LoadTexture("images/png/ammo.png");
     Vector2 position;
     Rectangle collider;
     bool collect = false;

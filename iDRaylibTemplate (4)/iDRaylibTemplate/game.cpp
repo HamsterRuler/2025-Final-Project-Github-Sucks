@@ -18,7 +18,7 @@ int main()
     int score = 0;
 
     // Initialize Background
-    Texture2D bgImage = LoadTexture("images/level1.png");
+    Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
     // Initialize Player
     //Texture2D playerImage = LoadTexture("images/player.png");
@@ -29,10 +29,10 @@ int main()
     Rectangle playerCollider = {player.x, player.y, 40, 40};
 
     // Player Direction
-    Texture2D playerRight = LoadTexture("images/player_right.png");
-    Texture2D playerLeft = LoadTexture("images/player_left.png");
-    Texture2D playerUp = LoadTexture("images/player_up.png");
-    Texture2D playerDown = LoadTexture("images/player_down.png");
+    Texture2D playerRight = LoadTexture("images/png/side view right 3X.png");
+    Texture2D playerLeft = LoadTexture("images/png/side view left 3X.png");
+    Texture2D playerUp = LoadTexture("images/png/side view back 3X.png");
+    Texture2D playerDown = LoadTexture("images/png/front view 3x.png");
     typedef enum
     {
         up,
@@ -48,7 +48,7 @@ int main()
     Rectangle coinCollider = {coin.x, coin.y, 50, 50};
     bool collect = false;*/
     bool coinCollision = false;
-    Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
+    //Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
 
     SetTargetFPS(60);
     // ================================================================================================================
@@ -87,9 +87,9 @@ int main()
         {
             player.x = (screenWidth - 64);
         }
-        if (player.x <= 0) // Left
+        if (player.x <= -50) // Left
         {
-            player.x = 0;
+            player.x = -50;
         }
         if (player.y <= 50) // Up
         {
@@ -118,7 +118,7 @@ int main()
         DrawTexture(bgImage, 0, 0, WHITE);
 
         //----------------------
-        // Coin Collision
+        /* Coin Collision
         for (int i = 0; i < 3; ++i)
         {
             if (items[i].collect == false)
@@ -135,6 +135,7 @@ int main()
                 }
             }
         }
+            ?>*/
 
         // Draw the Coin (Old)
         /*if (collect == false)
