@@ -16,8 +16,11 @@ int main()
        Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        
 =======
+=======
+>>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
        Texture2D workBenchImage = LoadTexture("images/png/workbench.png");
      
 >>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
@@ -47,6 +50,7 @@ int main()
     bool ammoCollection = false;
    bool coinCollision = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Item items[3] = {Item(300, 100), Item(300, 200), Item(300, 300)};
     // ================================================================================================================
 
@@ -57,6 +61,9 @@ int main()
     bool wallCollision = false;
     Wall walls[1] = {Wall(100, 100)};
     // ================================================================================================================
+=======
+    Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
+>>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
 =======
     Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
 >>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
@@ -213,6 +220,9 @@ int main()
 =======
         // Draw the Workbench
         DrawTexture(workBenchImage, 20, 40, WHITE);
+<<<<<<< HEAD
+>>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
+=======
 >>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
 
         switch (playerDir)
