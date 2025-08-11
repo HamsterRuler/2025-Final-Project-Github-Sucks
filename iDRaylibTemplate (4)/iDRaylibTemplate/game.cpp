@@ -11,7 +11,7 @@ int main()
     int screenHeight = 450;
     InitWindow(screenWidth, screenHeight, "Top-Down Game");
 
-       Texture2D bgImage = LoadTexture("images/png/.png");
+       Texture2D bgImage = LoadTexture("images/png/bkgrnd (2).png");
      
 
     // Initialize Player
@@ -20,6 +20,7 @@ int main()
     float playerY = 100;
     Vector2 player = {playerX, playerY};
     float speed = 3.0f; // Speed in pixels per second
+    Rectangle playerCollider = {player.x, player.y, 40, 40};
     // ================================================================================================================
     typedef enum {
         up,
@@ -35,7 +36,7 @@ int main()
     Texture2D playerDown = LoadTexture("images/png/front view 3x.png");
     // ================================================================================================================
     bool ammoCollection = false;
-    Item items[3] = {Item(100, 100), Item(200, 200), Item(300, 300)};
+    Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
     // Set the target FPS
     SetTargetFPS(60);
     // ================================================================================================================
@@ -49,13 +50,27 @@ int main()
 
         DrawTexture(bgImage, 0, 0, WHITE);
 
-        for (int i=0; i < 3; i++)
+        for (int i = 0; i < 3; ++i)
         {
-            if (items[i].colect ==false)
+            if (items[i].collect == false)
             {
-                
+                coinCollision = CheckCollisionRecs(playerCollider, items[i].collider);
+                if (coinCollision == true)
+                {
+                    items[i].collect = true;
+                }
+                else
+                {
+                    DrawTexture(items[i].image, items[i].position.x, items[i].position.y, WHITE);
+                }
             }
         }
+
+        // Draw the Coin (Old)
+        /*if (collect == false)
+        {
+            DrawTexture(coinImage, coin.x, coin.y, WHITE);
+        }*/
 
 
         if (IsKeyDown(KEY_D))
@@ -91,13 +106,13 @@ int main()
         {
             player.x = -20;
         }
-        if (player.y <= 0) // Up
+        if (player.y <= 60) // Up
         {
-            player.y = 0;
+            player.y = 60;
         }
-        if ((player.y + 64) >= screenHeight) // Down
+        if ((player.y + 120) >= screenHeight) // Down
         {
-            player.y = (screenHeight - 64);
+            player.y = (screenHeight - 120);
         }
 
         //-------------------------------------------------
