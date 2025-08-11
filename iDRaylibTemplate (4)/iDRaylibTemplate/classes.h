@@ -15,4 +15,4 @@ class Item
         position = {x,y};
         collider = {x, y, size, size};
     }
-};
+}; 
