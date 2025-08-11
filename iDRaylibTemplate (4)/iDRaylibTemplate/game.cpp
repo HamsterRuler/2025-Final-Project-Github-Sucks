@@ -14,6 +14,8 @@ int main()
     int ammoInventory = 0;
 
        Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar.png");
+
+       Texture2D workBenchImage = LoadTexture("images/png/workbench.png");
      
 
     // Initialize Player
@@ -137,6 +139,9 @@ int main()
         ClearBackground(DARKBLUE);
         // Draw the Player
         DrawTexture(playerImage, player.x, player.y, WHITE);
+        
+        // Draw the Workbench
+        DrawTexture(workBenchImage, 20, 40, WHITE);
 
         switch (playerDir)
         {
