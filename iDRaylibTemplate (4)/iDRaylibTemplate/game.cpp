@@ -15,7 +15,7 @@ int main()
 
        Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar.png");
 
-       Texture2D workBenchImage = LoadTexture("images/png/workbench.png");
+       Texture2D workBenchImage = LoadTexture("images/png/workbenchSmall.png");
      
 
     // Initialize Player
@@ -41,7 +41,7 @@ int main()
     // ================================================================================================================
     bool ammoCollection = false;
    bool coinCollision = false;
-    Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
+    Item items[3] = {Item(300, 100), Item(300, 200), Item(300, 300)};
 
     // Set the target FPS
     SetTargetFPS(60);
@@ -141,7 +141,7 @@ int main()
         DrawTexture(playerImage, player.x, player.y, WHITE);
         
         // Draw the Workbench
-        DrawTexture(workBenchImage, 20, 40, WHITE);
+        DrawTexture(workBenchImage, 20, 80, WHITE);
 
         switch (playerDir)
         {
