@@ -15,7 +15,7 @@ int main()
 
        Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar.png");
 
-       Texture2D workBenchImage = LoadTexture("images/png/workbenchSmall.png");
+       Texture2D workBenchImage = LoadTexture("images/png/workbenchsmall (1) (7).png");
      
 
     // Initialize Player
@@ -141,7 +141,14 @@ int main()
         DrawTexture(playerImage, player.x, player.y, WHITE);
         
         // Draw the Workbench
-        DrawTexture(workBenchImage, 20, 80, WHITE);
+        DrawTexture(workBenchImage, 50, 80, WHITE);
+
+        // Draw the Ammo Inventory
+        // Draw the Ammo Label
+        DrawRectangle(0, 0, screenWidth, 50, BLACK);
+        DrawText("Ammo: ", 10, 10, 30, WHITE);
+        // Display the Ammo Count
+        DrawText(TextFormat("%d", ammoInventory), 100, 10, 30, WHITE);
 
         switch (playerDir)
         {
