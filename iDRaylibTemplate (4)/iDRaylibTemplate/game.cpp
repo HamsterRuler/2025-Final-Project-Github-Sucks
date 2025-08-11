@@ -19,10 +19,14 @@ int main()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        Texture2D workBenchImage = LoadTexture("images/png/workbench.png");
 =======
        Texture2D workBenchImage = LoadTexture("images/png/workbenchSmall.png");
 >>>>>>> parent of 4d45f53 (SCORE)
+=======
+       Texture2D workBenchImage = LoadTexture("images/png/workbench.png");
+>>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
 =======
        Texture2D workBenchImage = LoadTexture("images/png/workbench.png");
 >>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
@@ -153,10 +157,14 @@ int main()
         // Draw the Workbench
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         DrawTexture(workBenchImage, 20, 40, WHITE);
 =======
         DrawTexture(workBenchImage, 20, 80, WHITE);
 >>>>>>> parent of 4d45f53 (SCORE)
+=======
+        DrawTexture(workBenchImage, 20, 40, WHITE);
+>>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
 =======
         DrawTexture(workBenchImage, 20, 40, WHITE);
 >>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
