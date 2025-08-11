@@ -106,6 +106,8 @@ int main()
         }
         //-------------------------------------------------
          // Boundaries for the Player Movement
+         playerCollider.x = player.x;
+        playerCollider.y = player.y;
         if ((player.x + 64) >= screenWidth) // Right
         {
             player.x = (screenWidth - 64);
