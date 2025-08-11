@@ -52,12 +52,12 @@ int main()
 
         for (int i = 0; i < 3; ++i)
         {
-            if (items[i].collect == false)
+            if (items[i].colect == false)
             {
                 coinCollision = CheckCollisionRecs(playerCollider, items[i].collider);
                 if (coinCollision == true)
                 {
-                    items[i].collect = true;
+                    items[i].colect = true;
                 }
                 else
                 {
