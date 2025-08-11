@@ -16,3 +16,18 @@ class Item
         collider = {x, y, size, size};
     }
 };
+
+class Wall
+{
+    public:
+    Texture2D image = LoadTexture("images/png/workbenchSmall (1) (7).png");
+    Vector2 position;
+    Rectangle collider;
+    float size = 64;
+
+    Wall(float x, float y)
+    {
+        position = {x,y};
+        collider = {x, y, size, size};
+    }
+};

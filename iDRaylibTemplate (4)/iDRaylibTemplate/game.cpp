@@ -15,8 +15,7 @@ int main()
 
        Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
-       Texture2D workBenchImage = LoadTexture("images/png/workbenchsmall (1) (7).png");
-     
+       
 
     // Initialize Player
     Texture2D playerImage = LoadTexture("images/png/front view 3x.png");
@@ -25,6 +24,7 @@ int main()
     Vector2 player = {playerX, playerY};
     float speed = 3.0f; // Speed in pixels per second
     Rectangle playerCollider = {player.x, player.y, 40, 40};
+    // ================================================================================================================
     // ================================================================================================================
     typedef enum {
         up,
@@ -42,6 +42,15 @@ int main()
     bool ammoCollection = false;
    bool coinCollision = false;
     Item items[3] = {Item(300, 100), Item(300, 200), Item(300, 300)};
+    // ================================================================================================================
+
+
+    // Initialize Walls
+
+
+    bool wallCollision = false;
+    Wall walls[1] = {Wall(100, 100)};
+    // ================================================================================================================
 
     // Set the target FPS
     SetTargetFPS(60);
@@ -58,19 +67,32 @@ int main()
 
         DrawTexture(bgImage, 0, 0, WHITE);
 
-       for (int i = 0; i < 3; ++i)
+       for (int i = 0; i < 2; ++i)
         {
-            if (items[i].collect == false)
+            DrawTexture(walls[i].image, walls[i].position.x, walls[i].position.y, WHITE);
+            wallCollision = CheckCollisionRecs(playerCollider, walls[i].collider);
+            if (wallCollision == true)
             {
-                coinCollision = CheckCollisionRecs(playerCollider, items[i].collider);
-                if (coinCollision == true)
+                switch (playerDir)
                 {
-                    ammoInventory +=1;
-                    items[i].collect = true;
-                }
-                else
-                {
-                    DrawTexture(items[i].image, items[i].position.x, items[i].position.y, WHITE);
+                    case up:
+                        player.y = walls[i].position.y + 0;
+                    break;
+                        
+                    case down:
+                        player.y = walls[i].position.y - 0;
+                    break;
+
+                    case left:
+                        player.x = walls[i].position.x + 0;
+                    break;
+
+                    case right:
+                        player.x = walls[i].position.x - 0;
+                    break;
+
+                    default:
+                    break;
                 }
             }
         }
@@ -87,6 +109,36 @@ int main()
         {
             DrawTexture(coinImage, coin.x, coin.y, WHITE);
         }*/
+
+       for (int i = 0; i < 2; ++i)
+        {
+            DrawTexture(walls[i].image, walls[i].position.x, walls[i].position.y, WHITE);
+            wallCollision = CheckCollisionRecs(playerCollider, walls[i].collider);
+            if (wallCollision == true)
+            {
+                switch (playerDir)
+                {
+                    case up:
+                        player.y = walls[i].position.y + 32;
+                    break;
+                        
+                    case down:
+                        player.y = walls[i].position.y - 64;
+                    break;
+
+                    case left:
+                        player.x = walls[i].position.x + 64;
+                    break;
+
+                    case right:
+                        player.x = walls[i].position.x - 64;
+                    break;
+
+                    default:
+                    break;
+                }
+            }
+        }
 
 
         if (IsKeyDown(KEY_D))
@@ -140,8 +192,7 @@ int main()
         // Draw the Player
         DrawTexture(playerImage, player.x, player.y, WHITE);
         
-        // Draw the Workbench
-        DrawTexture(workBenchImage, 50, 80, WHITE);
+       
 
         // Draw the Ammo Inventory
         // Draw the Ammo Label
