@@ -15,7 +15,12 @@ int main()
 
        Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
+<<<<<<< HEAD
        
+=======
+       Texture2D workBenchImage = LoadTexture("images/png/workbench.png");
+     
+>>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
 
     // Initialize Player
     Texture2D playerImage = LoadTexture("images/png/front view 3x.png");
@@ -41,6 +46,7 @@ int main()
     // ================================================================================================================
     bool ammoCollection = false;
    bool coinCollision = false;
+<<<<<<< HEAD
     Item items[3] = {Item(300, 100), Item(300, 200), Item(300, 300)};
     // ================================================================================================================
 
@@ -51,6 +57,9 @@ int main()
     bool wallCollision = false;
     Wall walls[1] = {Wall(100, 100)};
     // ================================================================================================================
+=======
+    Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
+>>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
 
     // Set the target FPS
     SetTargetFPS(60);
@@ -192,6 +201,7 @@ int main()
         // Draw the Player
         DrawTexture(playerImage, player.x, player.y, WHITE);
         
+<<<<<<< HEAD
        
 
         // Draw the Ammo Inventory
@@ -200,6 +210,10 @@ int main()
         DrawText("Ammo: ", 10, 10, 30, WHITE);
         // Display the Ammo Count
         DrawText(TextFormat("%d", ammoInventory), 100, 10, 30, WHITE);
+=======
+        // Draw the Workbench
+        DrawTexture(workBenchImage, 20, 40, WHITE);
+>>>>>>> parent of e8ebd5d (Merge branch 'main' of https://github.com/HamsterRuler/2025-Final-Project-Github-Sucks)
 
         switch (playerDir)
         {
