@@ -17,7 +17,11 @@ int main()
 
        Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar.png");
 
+<<<<<<< HEAD
        Texture2D workBenchImage = LoadTexture("images/png/workbench.png");
+=======
+       Texture2D workBenchImage = LoadTexture("images/png/workbenchSmall.png");
+>>>>>>> parent of 4d45f53 (SCORE)
      
 
     // Initialize Player
@@ -143,7 +147,11 @@ int main()
         DrawTexture(playerImage, player.x, player.y, WHITE);
         
         // Draw the Workbench
+<<<<<<< HEAD
         DrawTexture(workBenchImage, 20, 40, WHITE);
+=======
+        DrawTexture(workBenchImage, 20, 80, WHITE);
+>>>>>>> parent of 4d45f53 (SCORE)
 
         switch (playerDir)
         {
