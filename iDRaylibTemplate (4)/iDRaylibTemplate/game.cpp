@@ -13,7 +13,7 @@ int main()
 
     int ammoInventory = 0;
 
-       Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar.png");
+       Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
        Texture2D workBenchImage = LoadTexture("images/png/workbenchsmall (1) (7).png");
      
