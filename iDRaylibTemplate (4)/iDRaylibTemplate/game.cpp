@@ -51,7 +51,7 @@ int main()
 
         DrawTexture(bgImage, 0, 0, WHITE);
 
-        for (int i = 0; i < 3; ++i)
+       for (int i = 0; i < 3; ++i)
         {
             if (items[i].colect == false)
             {
@@ -66,6 +66,13 @@ int main()
                 }
             }
         }
+
+        // Draw the Coin (Old)
+        /*if (collect == false)
+        {
+            DrawTexture(coinImage, coin.x, coin.y, WHITE);
+        }*/
+
 
         // Draw the Coin (Old)
         /*if (collect == false)
