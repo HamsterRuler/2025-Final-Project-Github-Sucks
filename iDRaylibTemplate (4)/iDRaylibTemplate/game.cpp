@@ -1,6 +1,7 @@
 
 
 #include "raylib.h"
+#include "classes.h"
 
 // ===================================================================================================================
 int main()
@@ -10,8 +11,7 @@ int main()
     int screenHeight = 450;
     InitWindow(screenWidth, screenHeight, "Top-Down Game");
 
-     Texture2D bgImage = LoadTexture("Grey-Granada-Tile-Cement-8x8-large.png");
-
+       Texture2D bgImage = LoadTexture("images/png/.png");
      
 
     // Initialize Player
@@ -33,13 +33,29 @@ int main()
     Texture2D playerLeft = LoadTexture("images/png/side view left 3x.png");
     Texture2D playerUp = LoadTexture("images/png/side view back 3x.png");
     Texture2D playerDown = LoadTexture("images/png/front view 3x.png");
+    // ================================================================================================================
+    bool ammoCollection = false;
+    Item items[3] = {Item(100, 100), Item(200, 200), Item(300, 300)};
     // Set the target FPS
     SetTargetFPS(60);
     // ================================================================================================================
+
+
+
     // Game Loop
     while (!WindowShouldClose())
     {
         BeginDrawing();
+
+        DrawTexture(bgImage, 0, 0, WHITE);
+
+        for (int i=0; i < 3; i++)
+        {
+            if (items[i].colect ==false)
+            {
+                
+            }
+        }
 
 
         if (IsKeyDown(KEY_D))
