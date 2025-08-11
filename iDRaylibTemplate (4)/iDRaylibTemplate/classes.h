@@ -1,13 +1,15 @@
+
 #include "raylib.h"
 
 class Item
 {
     public:
-    Texture2D image =LoadTexture("images/png/ammmo.png");
+    Texture2D image = LoadTexture("images/png/ammo.png");
     Vector2 position;
     Rectangle collider;
-    bool colect = false;
-    float size = 70;
+    bool collect = false;
+    float size = 54;
+
     Item(float x, float y)
     {
         position = {x,y};

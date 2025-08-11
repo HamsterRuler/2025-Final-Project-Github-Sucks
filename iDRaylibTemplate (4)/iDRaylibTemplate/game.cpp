@@ -11,7 +11,9 @@ int main()
     int screenHeight = 450;
     InitWindow(screenWidth, screenHeight, "Top-Down Game");
 
-       Texture2D bgImage = LoadTexture("images/png/bkgrnd (2).png");
+    
+
+       Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar.png");
      
 
     // Initialize Player
@@ -36,8 +38,9 @@ int main()
     Texture2D playerDown = LoadTexture("images/png/front view 3x.png");
     // ================================================================================================================
     bool ammoCollection = false;
-    bool coinCollision = false;
+   bool coinCollision = false;
     Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
+
     // Set the target FPS
     SetTargetFPS(60);
     // ================================================================================================================
@@ -53,12 +56,12 @@ int main()
 
        for (int i = 0; i < 3; ++i)
         {
-            if (items[i].colect == false)
+            if (items[i].collect == false)
             {
                 coinCollision = CheckCollisionRecs(playerCollider, items[i].collider);
                 if (coinCollision == true)
                 {
-                    items[i].colect = true;
+                    items[i].collect = true;
                 }
                 else
                 {
