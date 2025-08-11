@@ -11,7 +11,7 @@ int main()
     int screenHeight = 450;
     InitWindow(screenWidth, screenHeight, "Top-Down Game");
 
-    
+    int ammoInventory = 0;
 
        Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar.png");
      
@@ -51,6 +51,8 @@ int main()
     while (!WindowShouldClose())
     {
         BeginDrawing();
+        DrawRectangle(0, 0, screenWidth, 50, BLACK);
+        DrawText("Ammo: ", 10, 10, 30, WHITE);
 
         DrawTexture(bgImage, 0, 0, WHITE);
 
@@ -61,6 +63,7 @@ int main()
                 coinCollision = CheckCollisionRecs(playerCollider, items[i].collider);
                 if (coinCollision == true)
                 {
+                    ammoInventory +=1;
                     items[i].collect = true;
                 }
                 else
