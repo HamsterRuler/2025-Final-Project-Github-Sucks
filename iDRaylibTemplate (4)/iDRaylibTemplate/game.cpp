@@ -36,6 +36,7 @@ int main()
     Texture2D playerDown = LoadTexture("images/png/front view 3x.png");
     // ================================================================================================================
     bool ammoCollection = false;
+    bool coinCollision = false;
     Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
     // Set the target FPS
     SetTargetFPS(60);
