@@ -1,5 +1,4 @@
 
-// DONUT LAND INVASION
 // A Top-Down Action-Adventure Game
 // Created by Eevee
 
@@ -20,7 +19,7 @@ int main()
     // Initialize Background
     Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
-    Texture2D table = LoadTexture("images/png/workbenchSmall (4).png");
+    Texture2D table = LoadTexture("images/png/workbenchSmall (2).png");
 
     // Initialize Player
     //Texture2D playerImage = LoadTexture("images/player.png");
@@ -50,7 +49,7 @@ int main()
     Rectangle coinCollider = {coin.x, coin.y, 50, 50};
     bool collect = false;*/
     bool coinCollision = false;
-    //Item items[3] = {Item(100, 100), Item(100, 200), Item(100, 300)};
+    Item items[2] = {Item(100, 200), Item(100, 300)};
 
     SetTargetFPS(60);
     // ================================================================================================================
@@ -119,10 +118,10 @@ int main()
         // Draw Background
         DrawTexture(bgImage, 0, 0, WHITE);
 
-        DrawTexture(table, 100, 150, WHITE);
+        DrawTexture(table, 105, 120, WHITE);
 
         //----------------------
-        /* Coin Collision
+         //Coin Collision
         for (int i = 0; i < 3; ++i)
         {
             if (items[i].collect == false)
@@ -130,7 +129,7 @@ int main()
                 coinCollision = CheckCollisionRecs(playerCollider, items[i].collider);
                 if (coinCollision == true)
                 {
-                    score += 10;
+                    score += 1;
                     items[i].collect = true;
                 }
                 else
@@ -139,7 +138,7 @@ int main()
                 }
             }
         }
-            ?>*/
+            
 
         // Draw the Coin (Old)
         /*if (collect == false)
@@ -150,7 +149,7 @@ int main()
         //----------------------
         // Draw Score
         DrawRectangle(0, 0, screenWidth, 50, BLACK);
-        DrawText(TextFormat("Score: %i", score), 10, 10, 30, WHITE);
+        DrawText(TextFormat("Ammo: %i", score), 10, 10, 30, WHITE);
 
         // Draw the Player
         switch (playerDir)
