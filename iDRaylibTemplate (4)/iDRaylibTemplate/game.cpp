@@ -5,6 +5,13 @@
 // ===================================================================================================================
 int main()
 {
+    // wall stuff---
+    //Texture2D table = LoadTexture("images/png/workbenchSmall (2).png");
+    bool wallCollision = false;
+    // Create an array of walls
+    wall walls[1] = {wall(100, 100)};
+
+
     // Initialize Window
     int screenWidth = 800;
     int screenHeight = 450;
@@ -16,7 +23,7 @@ int main()
     // Initialize Background
     Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
-    Texture2D table = LoadTexture("images/png/workbenchSmall (2).png");
+    
 
     // Initialize Player
     //Texture2D playerImage = LoadTexture("images/player.png");
@@ -115,7 +122,7 @@ int main()
         // Draw Background
         DrawTexture(bgImage, 0, 0, WHITE);
 
-        DrawTexture(table, 105, 120, WHITE);
+    
 
         //----------------------
          //Coin Collision
@@ -148,6 +155,37 @@ int main()
         DrawRectangle(0, 0, screenWidth, 50, BLACK);
         DrawText(TextFormat("Ammo: %i", score), 10, 10, 30, WHITE);
 
+        // Draw Walls
+        for (int i = 0; i < 2; ++i)
+        {
+            DrawTexture(walls[i].image, walls[i].position.x, walls[i].position.y, WHITE);
+            wallCollision = CheckCollisionRecs(playerCollider, walls[i].collider);
+            if (wallCollision == true)
+            {
+                switch (playerDir)
+                {
+                    case up:
+                        player.y = walls[i].position.y + 64;
+                    break;
+                        
+                    case down:
+                        player.y = walls[i].position.y - 64;
+                    break;
+
+                    case left:
+                        player.x = walls[i].position.x + 64;
+                    break;
+
+                    case right:
+                        player.x = walls[i].position.x - 64;
+                    break;
+
+                    default:
+                    break;
+                }
+            }
+        }
+
         // Draw the Player
         switch (playerDir)
         {
@@ -172,3 +210,4 @@ int main()
     }
     CloseWindow();
 }
+
