@@ -1,7 +1,4 @@
 
-// A Top-Down Action-Adventure Game
-// Created by Eevee
-
 #include "raylib.h"
 #include "classes.h"
 
@@ -171,7 +168,7 @@ int main()
         }
 
         EndDrawing();
-        //-------------------------------------------------
+        
     }
     CloseWindow();
 }
