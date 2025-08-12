@@ -20,7 +20,7 @@ int main()
     // Initialize Background
     Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
-    Texture2D table = LoadTexture("images/png/workbenchSmall (3).png");
+    Texture2D table = LoadTexture("images/png/workbenchSmall (4).png");
 
     // Initialize Player
     //Texture2D playerImage = LoadTexture("images/player.png");
