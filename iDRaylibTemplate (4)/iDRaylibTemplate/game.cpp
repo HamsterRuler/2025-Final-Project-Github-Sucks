@@ -20,6 +20,8 @@ int main()
     // Initialize Background
     Texture2D bgImage = LoadTexture("images/png/bkgrndnobenchwithnoblackbar (1).png");
 
+    Texture2D table = LoadTexture("images/png/workbenchSmall (3).png");
+
     // Initialize Player
     //Texture2D playerImage = LoadTexture("images/player.png");
     float playerX = 500;
@@ -116,6 +118,8 @@ int main()
 
         // Draw Background
         DrawTexture(bgImage, 0, 0, WHITE);
+
+        DrawTexture(table, 100, 150, WHITE);
 
         //----------------------
         /* Coin Collision
